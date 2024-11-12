@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<Pattern name="Phone number" flags="global grouped">
+    <import name="Decimal" from="lib.numbers.int-numbers"/>
+    <import name="Hyphen" from="lib.chars.separators"/>
+    <!-- Cell phone number eg.:(+45)40-123-4567 -->
+    <t>(+</t>
+    <repeat value="2">
+        <decimal/>
+    </repeat>
+    <t>)</t>
+    <repeat value="2">
+        <decimal/>
+    </repeat>
+    <hyphen/>
+    <!-- there are 2 variables (left,right) that you must specifiy in the command line -->
+    <repeat value="{$left}">
+        <decimal/>
+    </repeat>
+    <hyphen/>
+    <repeat value="{$right}">
+        <decimal/>
+    </repeat>
+
+</Pattern>
